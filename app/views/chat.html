@@ -1,0 +1,14 @@
+
+<h2>Chat</h2>
+
+<form>
+  <input placeholder="Message..." ng-model="newMessage">
+  <button type="submit" ng-click="vm.addMessage(newMessage);newMessage = null;">Send</button>
+</form>
+
+<ul id="messages" ng-show="vm.messages.length">
+  <li ng-repeat="message in vm.messages">{{message.message}} <span style="opacity:0.5">- from {{message.name}} at {{message.timestamp | date:'yyyy-MM-dd HH:mm:ss'}}</span></li>
+</ul>
+
+<p class="alert alert-danger" ng-show="err">{{err}}</p>
+

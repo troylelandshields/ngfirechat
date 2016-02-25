@@ -1,0 +1,14 @@
+<h2>Chatrooms</h2>
+
+<form>
+  <input placeholder="Chatroom" ng-model="newChatRoom">
+  <button type="submit" ng-click="vm.createChatroom(newChatRoom);newChatRoom = null;">Create</button>
+</form>
+
+<ul id="chatrooms">
+  <li ng-repeat="chatroom in vm.chatrooms">
+    <a href="#/chat/{{chatroom.id}}">{{chatroom.name}}</a>
+  </li>
+</ul>
+
+<p class="alert alert-danger" ng-show="err">{{err}}</p>
